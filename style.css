@@ -1,5 +1,7 @@
 *{
     --maincolor: #3498db;
+    --gray900: #1d212a;
+    --gray800: #2d3540;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -30,7 +32,7 @@ main >*{
 }
 /* Sidebar start */
 .sidebar{
-    width: 25vw;
+    width: 22vw;
     padding: 10px;
     display: flex;
     flex-flow: column;
@@ -44,7 +46,7 @@ main >*{
 }
 .sidebar ul{
     margin: 1.5rem 0;
-    padding: 0rem 15%;
+    padding: 0rem 10%;
     gap: 1.5rem;
     display:flex;
     flex-flow: column;
@@ -54,7 +56,7 @@ main >*{
 .sidebar li{
     display: flex;
     flex-flow: row;
-    flex: 1 1 0;
+    flex: 1 1 auto;
     font-weight: 500;
     font-size:larger;
 }
@@ -188,8 +190,9 @@ a{
 .header-bottom .right-bar{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    justify-items: flex-end;
     gap: 10px;
 }
 
@@ -213,7 +216,13 @@ a{
     grid-template-columns: 3fr 1fr;
     grid-template-rows: min-content 1fr;
 }
+.main-content h1,h2,h3,h4{
+    color: var(--gray900);
+}
 
+.main-content p{
+    color: var(--gray800);
+}
 .main-content h3{
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -221,20 +230,20 @@ a{
 
 .card-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap:20px;
 }
 .card h4{
     margin-bottom: 0.5rem;
 }
 .card{
-    border-radius: 1rem;
+    border-radius: 10px;
     display: flex;
     flex-flow: column;
     background-color: white;
     background: linear-gradient(90deg, #fdcd3b 20px, #ffffff 20px);
     overflow: hidden;
-    padding: 20px 20px 20px 30px;
+    padding: 20px 20px 15px 30px;
 }
 
 .card .actions{
@@ -243,7 +252,9 @@ a{
 }
 
 .card p{
+    font-size: 0.9rem;
     align-self: flex-end;
+    margin-bottom: 0.5rem;
 }
 .projects{
     grid-column: 1;
@@ -255,8 +266,61 @@ a{
     grid-row: 1;
 }
 
+.announcement-list{
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1;
+}
+
+.announcement-card{
+    padding: 10px 0;
+}
+
+.announcement-card + .announcement-card {
+    border-top: #d3d3d3 1px solid;
+  }
+.announcement-card h4{
+    font-size: 0.8 rem;
+}
+.announcement-card p{
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .trendings{
     grid-column: 2;
     grid-row: 2;
 }
+
+.trending-list{
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    justify-content: space-between;
+    gap:1rem;
+}
+
+.trending-card{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+}
+.trending-card img{
+    grid-column: 1;
+    grid-row: span 2;
+}
+.trending-card h5, p{
+    grid-column: 2;
+}
+
 /* Main Content End */
